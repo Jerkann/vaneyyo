@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Para Laura 💖</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <div class="foto-container">
+    <img src="./fotovida.jpg" alt="Laura hermosa" class="foto-redonda">
+    </div>
+  <div class="container">
+    <h1>🌹 Para Laura López 🌹</h1>
+    <p class="mensaje">
+      Amor mío,<br><br>
+      Quiero que sepas lo mucho que te amo y lo agradecido que estoy por tenerte en mi vida.
+      Tu sonrisa ilumina mis días y tu amor me da fuerzas para seguir creciendo.
+      <br><br>
+      Eres mi inspiración, mi compañera, y mi pedazo favorito de cada día.
+      <br><br>
+      Gracias por existir, por amarme, y por ser tú. 💖
+    </p>
+    <div class="corazones">💗💗💗</div>
+    <p class="firma">Con todo mi amor, <br> Yeye 💌</p>
+  </div>
+
+  <!-- Script de corazones voladores -->
+  <script>
+    const heart = () => {
+      const el = document.createElement("div");
+      el.classList.add("flying-heart");
+      el.innerText = "💗";
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.animationDuration = (2 + Math.random() * 3) + "s";
+      document.body.appendChild(el);
+
+      setTimeout(() => el.remove(), 5000);
+    };
+
+    setInterval(heart, 300); // uno nuevo cada 300ms
+  </script>
+</body>
+<script>
+  function crearCorazon() {
+    const heart = document.createElement("div");
+    heart.classList.add("flying-heart");
+
+    heart.innerText = "💗"; // puedes mezclar: 💖 💘 💝 💞
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (12 + Math.random() * 24) + "px";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    // Lo eliminamos después de la animación para no saturar
+    setTimeout(() => heart.remove(), 8000);
+  }
+
+  // 💣 Lanzamos muchos corazones más seguido
+  setInterval(() => {
+    for (let i = 0; i < 5; i++) {
+      crearCorazon();
+    }
+  }, 300); // Cada 300ms se crean 5 corazones
+</script>
+
+</html>
